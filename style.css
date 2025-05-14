@@ -1,98 +1,56 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #4c1d95, #6b21a8);
-  color: #fff;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
   padding: 2rem;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  color: #333;
 }
 
 .container {
-  max-width: 500px;
-  width: 100%;
-  background: #fff;
-  color: #333;
+  max-width: 600px;
+  margin: auto;
+  background: white;
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  margin-top: 2rem;
-}
-
-.logo img {
-  display: block;
-  max-width: 120px;
-  margin: 0 auto 1rem auto;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 h1 {
   text-align: center;
-  color: #6b21a8;
-  font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 
 form label {
-  font-weight: bold;
-  margin-top: 1rem;
   display: block;
+  margin-top: 1rem;
 }
 
 select,
 button {
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: none;
+  padding: 0.6rem;
   margin-top: 0.5rem;
-  font-size: 1rem;
-}
-
-select {
-  background: #f0f0f0;
-  color: #333;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 button {
-  background-color: #9333ea;
+  background-color: #6b21a8;
   color: white;
   font-weight: bold;
+  cursor: pointer;
   margin-top: 2rem;
   transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #7e22ce;
+  background-color: #581c87;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.grid label {
-  background: #f3e8ff;
-  padding: 0.6rem;
-  border-radius: 8px;
-  color: #4c1d95;
-  display: flex;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  accent-color: #9333ea;
-  width: 18px;
-  height: 18px;
+  margin-top: 0.5rem;
 }
 
 .hidden {
