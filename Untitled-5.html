@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mexidinho Açaí</title>
+  <link rel="icon" href="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/491882385_703753455529322_1856946490956747163_n.jpg?ccb=11-4&oh=01_Q5Aa1gF2PDKRIFat_S3iLcFoFaSg4IzUl00yO2WxGg2sItsApA&oe=6830F09D&_nc_sid=5e03e0&_nc_cat=101">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+      background: linear-gradient(to bottom right, #6a0dad, #b19cd9);
+      color: white;
+      text-align: center;
+    }
+    
+    header {
+      padding: 20px;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 10px;
+    }
+
+    .botao-acai {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      border: 2px solid #800080;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      width: fit-content;
+      margin: 10px auto;
+    }
+
+    .botao-acai img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .texto-botao {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .titulo {
+      font-size: 16px;
+      font-weight: bold;
+      color: #4b0082;
+    }
+
+    .preco {
+      font-size: 14px;
+      color: #008f2b80;
+    }
+
+     .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #4b0082;
+    }
+
+    .checkbox-group {
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .fechar, .enviar {
+      background-color: #800080;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+      </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://media-gig4-2.cdn.whatsapp.net/v/t61.24694-24/491882385_703753455529322_1856946490956747163_n.jpg?ccb=11-4&oh=01_Q5Aa1gF2PDKRIFat_S3iLcFoFaSg4IzUl00yO2WxGg2sItsApA&oe=6830F09D&_nc_sid=5e03e0&_nc_cat=101" alt="Logo Mexidinho Açaí">
+    <h1>Mexidinho Açaí</h1>
+    <p class="slogan">Sabor que refresca, energia que conquista! 🍓🍌🍫</p>
+  </header>
+
+  <header>
+  <button class="botao-acai" onclick="abrirModal('b/Mexidinho 400ml')">
+    <img src="mexidinhodebanana.png" alt="Copo de Açaí">
+    <div class="texto-botao">
+      <div class="titulo">Mexidinho de Banana 400ml</div>
+      <div class="preco">R$ 12,00</div>
+    </div>
+  </button>
+
+  <button class="botao-acai" onclick="abrirModal('M/Mexidinho 400ml')">
+    <img src="https://media.istockphoto.com/id/157728063/pt/foto/batido-de-berry.jpg?s=612x612&w=0&k=20&c=KPbOS0AUmQqjxPatMlGPwcZCCrLRcONgbInixyldAkM=">
+    <div class="texto-botao">
+      <div class="titulo">Mexidinho de Morango 400ml</div>
+      <div class="preco">R$ 12,00</div>
+    </div>
+  </button>
+
+  <button class="botao-acai" onclick="abrirModal('400ml')">
+    <img src="https://media.istockphoto.com/id/1451849887/pt/foto/acai-bowl-with-banana-granola-and-condensed-milk-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=pRrmsTyUmWSolnjF5cGRaMdk6MMRDWQz67TSfD-nqGc=" alt="Copo de Açaí">
+    <div class="texto-botao">
+      <div class="titulo">Açaí 400ml</div>
+      <div class="preco">R$ 12,00</div>
+    </div>
+  </button>
+
+  <button class="botao-acai" onclick="abrirModal('780ml')">
+    <img src="https://media.istockphoto.com/id/1451849887/pt/foto/acai-bowl-with-banana-granola-and-condensed-milk-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=pRrmsTyUmWSolnjF5cGRaMdk6MMRDWQz67TSfD-nqGc=" alt="Copo de Açaí">
+    <div class="texto-botao">
+      <div class="titulo">Açaí 780ml</div>
+      <div class="preco">R$ 16,00</div>
+    </div>
+  </button>
+
+  <button class="botao-acai" onclick="abrirModal('3x Açaí 400ml')">
+    <img src="https://imagensempng.com.br/wp-content/uploads/2021/02/ACAI-NO-COPO.png">
+    <div class="texto-botao">
+      <div class="titulo">3x Açaí-400ml</div>
+      <div class="preco">R$ 34,00</div>
+    </div>
+  </button>
+
+  <img class="bowl-image" src="https://snowfruit.com.br/wp-content/webp-express/webp-images/uploads/2021/08/Quais_são_os_melhores_acompanhamentos_para_açai-1024x559.png.webp" alt="Tigela de Açaí">
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Personalize seu pedido</h2>
+      <form id="formulario">
+        <div id="adicionais-container"></div>
+        <div id="coberturas-container"></div>
+        <button type="submit" class="enviar">Enviar pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const adicionais = ["Banana", "Morango", "Leite Ninho", "Paçoca", "Granola", "coco", "exNutella", "exOreo"];
+    const coberturas = ["Leite Condensado", "Mel", "Calda de Chocolate", "Calda de Morango"];
+
+    let tipoSelecionado = '';
+
+    function abrirModal(tipo) {
+      tipoSelecionado = tipo;
+      const modal = document.getElementById('modal');
+      const adicionaisDiv = document.getElementById('adicionais-container');
+      const coberturasDiv = document.getElementById('coberturas-container');
+      adicionaisDiv.innerHTML = '<h3>Escolha os adicionais</h3>';
+      coberturasDiv.innerHTML = '<h3>Escolha as coberturas</h3>';
+
+      const maxAdicionais = tipo === '400ml' ? 3 : 5;
+      const maxCoberturas = tipo === '400ml' ? 1 : 2;
+
+      adicionais.forEach((item, index) => {
+        adicionaisDiv.innerHTML += `
+          <label><input type="checkbox" name="adicionais" value="${item}" onchange="limitarSelecao('adicionais', ${maxAdicionais})"> ${item}</label>
+        `;
+      });
+
+      coberturas.forEach((item, index) => {
+        coberturasDiv.innerHTML += `
+          <label><input type="checkbox" name="coberturas" value="${item}" onchange="limitarSelecao('coberturas', ${maxCoberturas})"> ${item}</label>
+        `;
+      });
+
+      modal.style.display = 'flex';
+    }
+
+    function limitarSelecao(name, limite) {
+      const checkboxes = document.querySelectorAll(`input[name='${name}']`);
+      const selecionados = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+      if (selecionados.length > limite) {
+        selecionados[selecionados.length - 1].checked = false;
+        alert(`Você só pode escolher até ${limite} ${name}`);
+      }
+    }
+
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const selecionadosAdicionais = Array.from(document.querySelectorAll("input[name='adicionais']:checked")).map(cb => cb.value);
+      const selecionadosCoberturas = Array.from(document.querySelectorAll("input[name='coberturas']:checked")).map(cb => cb.value);
+
+      const mensagem = `Olá! Quero um Açaí de ${tipoSelecionado.toUpperCase()} com:\nAdicionais: ${selecionadosAdicionais.join(', ')}\nCoberturas: ${selecionadosCoberturas.join(', ')}`;
+      const whatsappUrl = `https://wa.me/5527992847308?text=${encodeURIComponent(mensagem)}`;
+
+      window.open(whatsappUrl, '_blank');
+    });
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
